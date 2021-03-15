@@ -1,6 +1,6 @@
 # Gov-data-analysis
 
-##How it works?
+## How it works?
 Laravel scheduler calls a job every hour first checking to see if an existing job isn't currently running
 
 Scheduler then runs command account:import which in turn dispatches the ProcessCsvImport Job.
@@ -14,7 +14,7 @@ The returned array is looped through and line items are inserted via base table 
 don't exist. Model id's are then passed up the chain to parent tables. If any records fail to insert during the
 transaction, all data is rolled back. 
 
-##installation
+## Installation
 
 Use following command to clone repository locally into personal dev environment.
 
@@ -37,7 +37,7 @@ Run database migrations
 
 `php artisan migrate`
 
-##Monitoring
+## Monitoring
 
 Navigate to root directory and follow the log for a live log feed
 
