@@ -35,7 +35,7 @@ class GovApiReaderService
     public function import(String $url, array $options = []): void
     {
         try {
-            Http::timeout(3)->withOptions($options)->get($url);
+            Http::timeout(180)->withOptions($options)->get($url);
         }catch (\Exception $e){
             Log::error('Unable to import file from url: '.$url.' - '.$e->getMessage());
             die();
