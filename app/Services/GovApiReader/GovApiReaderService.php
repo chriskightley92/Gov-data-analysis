@@ -10,8 +10,11 @@ class GovApiReaderService
 {
 
     /**
+     * Was used to grab packages compiled monthly by querying packagesearch within gov API. Gov endpoints search engine
+     * made it almost impossible to target correct files. See lines 44-48 on how to use.
+     *
      * @param String $baseUrl
-     * @param String $queryString
+     * @param array $params
      * @param HandlerInterface $handler
      * @return array
      */
@@ -24,6 +27,8 @@ class GovApiReaderService
 
 
     /**
+     * Additional withOptions save guzzle directive allows local download of file
+     *
      * @param String $url
      * @param array $options
      */
@@ -38,6 +43,9 @@ class GovApiReaderService
     }
 
     /**
+     * Used by middleware to check service availability. Url is appended with a search term with a unique id to
+     * return as few results as possible to speed up check.
+     *
      * @param String $url
      * @return bool
      */

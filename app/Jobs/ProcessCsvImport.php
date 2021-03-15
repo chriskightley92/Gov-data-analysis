@@ -9,7 +9,6 @@ use App\Models\Expense;
 use App\Models\Transaction;
 use App\Models\Supplier;
 use App\Services\CsvParser\CsvParserService;
-use App\Services\GovApiReader\GovApiReaderService as Service;
 use Illuminate\Support\Facades\Log;
 use App\Services\GovApiReader\GovApiReaderService;
 use Illuminate\Support\Facades\Storage;
@@ -40,14 +39,13 @@ class ProcessCsvImport implements ShouldQueue
      */
     public function handle(GovApiReaderService $service)
     {
-
         Log::info('Beginning Csv Import');
 
-//        $base_url = env('BASE_GOV_DATA_SEARCH_API_URL');
-//        $urlList = $service->search($base_url, [
-//            'q' => 'payment-to-suppliers-2011-2012',
-//
-//        ], new AccountsHandler());
+        //        $base_url = env('BASE_GOV_DATA_SEARCH_API_URL');
+        //        $urlList = $service->search($base_url, [
+        //            'q' => 'payment-to-suppliers-2011-2012',
+        //
+        //        ], new AccountsHandler());
 
         $urlList = [
             'https://data.yorkopendata.org/dataset/27bc1dc6-d62f-4b93-a326-13989f5bfb56/resource/58bd7c54-e93b-4c74-b4b0-3613229d8be7/download/over500payments2011.csv'

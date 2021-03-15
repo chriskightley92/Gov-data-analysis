@@ -12,4 +12,16 @@ class CompanyDepartment extends Model
     protected $fillable = ['company_id', 'department_id'];
 
     public $timestamps = true;
+
+
+    public function company()
+    {
+        return $this->hasOne(Company::class);
+    }
+
+
+    public function department()
+    {
+        return $this->hasOne(Department::class);
+    }
 }

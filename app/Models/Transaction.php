@@ -19,4 +19,21 @@ class Transaction extends Model
     ];
 
     public $timestamps = true;
+
+    public function companyDepartment()
+    {
+        return $this->hasOne(CompanyDepartment::class);
+    }
+
+
+    public function expense()
+    {
+        return $this->hasOne(Expense::class);
+    }
+
+    public function supplier()
+    {
+        return $this->hasOne(Supplier::class);
+    }
+
 }
